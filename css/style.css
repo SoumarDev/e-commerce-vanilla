@@ -1,0 +1,146 @@
+/*Start Variables*/
+:root {
+    --h-body: 0;
+    --s-body: 0%;
+    --l-body: 10%;
+    --h-primary: 0;
+    --l-primary: 100%;
+    --s-primary: 40%;
+    --body: hsl(var(--h-body), var(--s-body), var(--l-body));
+    --body-10: hsl(var(--h-body), var(--s-body), 10%);
+    --body-30: hsl(var(--h-body), var(--s-body), 30%);
+    --body-40: hsl(var(--h-body), var(--s-body), 40%);
+    --body-85: hsl(var(--h-body), var(--s-body), 85%);
+    --body-95: hsl(var(--h-body), var(--s-body), 95%);
+    --primary: hsl(var(--h-primary), var(--s-primary), var(--l-primary));
+    --white: hsl(0, 0%, 100%);
+    
+
+}
+/*End Variables*/
+
+/*Start Global Ruls*/
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    --webkit-scroll-behavior: smooth;
+    --moz-scroll-behavior:smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--body-95);
+    color: var(--body-10);
+
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*Mobile*/
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/*Tablet*/
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/*Desktop*/
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/*End Global Ruls*/
+
+/*Start Header*/
+header {
+    background: var(--white);
+    color: var(--body-10);
+    min-height: 104px;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo img {
+    width: 100px;
+    border-radius: 50%;
+}
+header form {
+    display: flex;
+}
+header input {
+    width: 350px;
+    height: 40px;
+    margin-right: 0;
+    outline: none;
+    padding: 8px;
+    border: 1px solid hsl(var(--h-body), var(--s-body), 85%);
+    border-right: none;
+}
+header input:focus {
+    border: 2px solid var(--body-85);
+}
+header input:focus .btn-search{
+    border-left-color: var(--primary);
+}
+header .btn-search {
+    height: 40px;
+    border-left: none;
+    background-color: var(--white);
+    outline: none;
+    border: 1px solid var(--body-85);
+}
+header .nav-and-icons {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+header .links ul {
+    display: block;
+    margin-left: 10px;
+}
+header .links ul li{
+    display: inline;
+    margin-left: 15px;
+}
+header .links ul li a {
+    text-decoration: none;
+}
+header .btn-search i,
+header .links ul li a,
+header .shop-cart-and-user i {
+    color: var(--body-30);
+    cursor: pointer;
+}
+header .shop-cart-and-user {
+    margin-left: 25px;
+}
+header .shop-cart-and-user i {
+    font-size: 25px;
+}
+header .shop-cart-and-user i:last-child {
+    margin-left: 10px;
+}
+/*End Header*/

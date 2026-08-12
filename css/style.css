@@ -4,8 +4,8 @@
     --s-body: 0%;
     --l-body: 10%;
     --h-primary: 0;
-    --l-primary: 100%;
-    --s-primary: 40%;
+    --s-primary: 100%;
+    --l-primary: 40%;
     --body: hsl(var(--h-body), var(--s-body), var(--l-body));
     --body-10: hsl(var(--h-body), var(--s-body), 10%);
     --body-30: hsl(var(--h-body), var(--s-body), 30%);
@@ -13,9 +13,10 @@
     --body-85: hsl(var(--h-body), var(--s-body), 85%);
     --body-95: hsl(var(--h-body), var(--s-body), 95%);
     --primary: hsl(var(--h-primary), var(--s-primary), var(--l-primary));
+    --primary-50: hsl(var(--h-primary), var(--s-primary), 50%);
     --white: hsl(0, 0%, 100%);
-    
-
+    --fs-icon: 14px;
+    --fs-label: 15px;
 }
 /*End Variables*/
 
@@ -49,6 +50,10 @@ ul {
     padding: 0;
     margin: 0;
 }
+a {
+    text-decoration: none;
+    color: var(--body-10);
+}
 
 /*Mobile*/
 @media (min-width: 768px) {
@@ -74,10 +79,11 @@ ul {
 header {
     background: var(--white);
     color: var(--body-10);
-    min-height: 104px;
+    min-height: 120px;
 }
 header .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -86,22 +92,40 @@ header .logo img {
     border-radius: 50%;
 }
 header form {
+    order: 3;
     display: flex;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 header input {
-    width: 350px;
+    /* width: 350px; */
     height: 40px;
     margin-right: 0;
     outline: none;
     padding: 8px;
     border: 1px solid hsl(var(--h-body), var(--s-body), 85%);
     border-right: none;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    header .container {
+        flex-wrap: nowrap;
+    }
+    header form {
+        order: 0;
+        width: auto;
+        margin-top: 0;
+    }
+    header input {
+        width: 350px;
+    }
+}
+header input::placeholder {
+    font-size: var(--fs-label);
 }
 header input:focus {
     border: 2px solid var(--body-85);
-}
-header input:focus .btn-search{
-    border-left-color: var(--primary);
 }
 header .btn-search {
     height: 40px;
@@ -109,38 +133,63 @@ header .btn-search {
     background-color: var(--white);
     outline: none;
     border: 1px solid var(--body-85);
+    font-size: var(--fs-icon);
 }
-header .nav-and-icons {
-    width: 500px;
+header .header-icons {
+    height: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
+    align-items: center;
+    gap: 25px;
 }
-header .links ul {
-    display: block;
-    margin-left: 10px;
-}
-header .links ul li{
-    display: inline;
-    margin-left: 15px;
-}
-header .links ul li a {
-    text-decoration: none;
+header .header-icons i {
+    font-size: var(--fs-icon);
+        color: var(--body-30);
 }
 header .btn-search i,
-header .links ul li a,
-header .shop-cart-and-user i {
-    color: var(--body-30);
+.header-icons .location,
+.header-icons .user,
+.header-icons .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
 }
-header .shop-cart-and-user {
-    margin-left: 25px;
+.header-icons span {
+    font-size: var(--fs-label);
 }
-header .shop-cart-and-user i {
-    font-size: 25px;
-}
-header .shop-cart-and-user i:last-child {
-    margin-left: 10px;
+.header-icons .location:hover span,
+.header-icons .user:hover span,
+.header-icons .cart:hover span,
+.header-icons .location:focus span,
+.header-icons .user:focus span,
+.header-icons .cart:focus span {
+    text-decoration: underline;
 }
 /*End Header*/
+/*Start Navbar*/
+.links {
+    background-color: var(--body-85);
+    padding: 15px;
+}
+.links ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.links ul li a {
+    color: var(--body-40);
+    font-size: var(--fs-label);
+    transition: color 0.3s ease;
+}
+.links ul li a:hover,
+.links ul li a:focus {
+    color: var(--body-10);
+    text-decoration: underline;
+}
+.links ul li:last-child a{
+    color: var(--primary);
+}
+
+/*End Navbar*/

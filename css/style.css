@@ -18,7 +18,8 @@
     --fs-icon: 15px;
     --fs-label: 16px;
     --fs-title: 22px;
-    --shadow-color: hsla(var(--h-body), var(--s-body), 10%, 0.5)
+    --shadow-color: hsla(var(--h-body), var(--s-body), 10%, 0.5);
+    --3s-transition: 0.3s;
 }
 /*End Variables*/
 
@@ -56,6 +57,11 @@ a {
     text-decoration: none;
     color: var(--body-10);
 }
+.section-title {
+    text-align: center;
+    padding: 10px;
+}
+/*End Global Ruls*/
 /*Start Header*/
 header {
     background: var(--white);
@@ -224,7 +230,7 @@ header .btn-search i,
 .links ul li a {
     color: var(--body-40);
     font-size: var(--fs-label);
-    transition: color 0.3s ease;
+    transition: color var(--3s-transition) ease;
 }
 .links ul li a:hover,
 .links ul li a:focus {
@@ -280,7 +286,7 @@ header .btn-search i,
 }
 .sub-links ul li a {
     color: var(--body-40);
-    transition: color 0.3s ease;
+    transition: color var(--3s-transition) ease;
 }           
 .sub-links ul li:first-child a{
     font-size: calc(var(--fs-label) + 1px);
@@ -380,7 +386,7 @@ header .btn-search i,
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    transition: 0.3s ease;
+    transition: var(--3s-transition) ease;
 }
 .carousel-prev {left: -50px;}
 .carousel-next {right: -50px;}
@@ -411,3 +417,41 @@ header .btn-search i,
     }
 }
 /* End Carousel */
+/* Start Main */
+.main-content .top-categ {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 15px;
+    text-align: center;
+}
+.main-content .category {
+    width: 100%;
+    height: 310px;
+    background-color: var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: var(--3s-transition) ease;
+}
+.main-content .category a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.main-content .category img {
+    height: 215px;
+    width: 215px;    
+    padding: 15px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+.main-content .top-categ .category h3 {
+    font-size: var(--fs-label);
+}
+.main-content .category:hover,
+.main-content .category:focus {
+    box-shadow: 0px 0px 8px var(--shadow-color);
+}
+/* End Main */

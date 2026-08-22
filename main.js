@@ -21,6 +21,10 @@ function initCarousel() {
     document.querySelector(".carousel-next").addEventListener("click", () => showSlide(currentIndex + 1));
     document.querySelector(".carousel-prev").addEventListener("click", () => showSlide(currentIndex - 1));
     dots.forEach((dot, i) => dot.addEventListener("click", () => showSlide(i)));
+
+    setInterval(() => {
+        showSlide(currentIndex + 1);
+    }, 5000);
 }
 
 initBurger();

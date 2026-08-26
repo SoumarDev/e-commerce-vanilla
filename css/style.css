@@ -487,7 +487,7 @@ header .btn-search i,
     background-color: var(--white);
     overflow-x: hidden;
     overflow-y: visible;
-    min-height: 450px;
+    min-height: 458.83px ;
     margin-bottom: 25px;
     position: relative;
 }
@@ -536,4 +536,98 @@ header .btn-search i,
 
 }
 /** End Unsere Produktempfehlung section **/
+/** Start Social-Media & Newsletter **/
+.main-content .social-and-newsletter .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 100px;
+}
+.main-content .social-and-newsletter{
+    padding: 15px;
+}
+.main-content .social-and-newsletter .social-content {
+    width: calc(100% / 2);
+    height: 100%;
+}
+.main-content .social-and-newsletter .social-content p,
+.main-content .social-and-newsletter .newsletter-content p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.social-and-newsletter .social-content .social-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.social-content .social-links .links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: inherit;
+    margin-bottom: 10px;
+}
+.social-content .social-links .links a:hover, 
+.social-content .social-links .links a:focus {
+    text-decoration: underline;
+}
+.social-content .social-links .links span {
+    margin-left: 10px;
+}
+.social-content .social-links .links i {
+    font-size: calc(var(--fs-icon) + 5px);
+}
+.social-and-newsletter .newsletter-content {
+    padding: 10px;
+}
+.social-and-newsletter .newsletter-content form {
+    width: 90%;
+    margin-bottom: 5px;
+    display: flex;
+} 
+.visually-hidden {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: none;
+}
+.newsletter-content form input {
+    flex: 1;
+    height: 35px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    padding: 8px;
+}
+.newsletter-content form .submit-btn {
+    height: 35px;
+    width: 10%;
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0 5px 5px 0;
+}
+.newsletter-content form .submit-btn:hover,
+.newsletter-content form .submit-btn:focus {
+    cursor: pointer;
+}
+
+.social-and-newsletter .newsletter-content span {
+    font-size: 13px;
+}
+.social-and-newsletter .newsletter-content span a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .main-content .social-and-newsletter .container {
+        flex-wrap: wrap;
+        gap: 50px;
+    }
+    
+}
+/** End Social-Media & Newsletter **/
 /* End Main */

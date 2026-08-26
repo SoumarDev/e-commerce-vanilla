@@ -27,5 +27,39 @@ function initCarousel() {
     }, 5000);
 }
 
+function getVisibleCount() {
+    if (window.innerWidth >= 990) return 6;
+    if (window.innerWidth >= 768) return 4;
+    return 2;
+}
+
+function initRecommendedProducts() {
+    const recProducts = document.querySelectorAll(".rec-product");
+    const visibleCount = getVisibleCount();
+    let currentIndex = 0;
+
+    function showProduct(index) {
+        currentIndex = (index + recProducts.length) % recProducts.length;
+        recProducts.forEach((product, i) => {
+            // pos : Abstand der Karte von currentIndex (0 = erste sichtbare)
+            const pos = (i - currentIndex + recProducts.length) % recProducts.length;
+            product.classList.toggle("ds-none", pos >=visibleCount);
+            product.style.order = pos;
+        })
+    }
+
+    document.querySelector(".chevron-next").addEventListener("click", () => showProduct(currentIndex + 1));
+    document.querySelector(".chevron-prev").addEventListener("click", () => showProduct(currentIndex - 1));
+
+    window.addEventListener("resize", () => {
+        visibleCount = getVisibleCount();
+        showProduct(currentIndex);
+    })
+    // Ohne diesen Aufruf wäre beim Laden alle 11 Karten sichtbar(nichts ist im HTML vorab versteckt)
+    showProduct(0);
+}
+
 initBurger();
 initCarousel();
+initRecommendedProducts();
+

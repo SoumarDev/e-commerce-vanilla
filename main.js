@@ -6,6 +6,9 @@ function initBurger() {
 }
 
 function initCarousel() {
+    const carouselNext = document.querySelector(".carousel-next");
+    if (!carouselNext) return;// kein Carousel da einfach überspringen.
+
     const carouselItems = document.querySelectorAll(".carousel-item");
     const dots = document.querySelectorAll(".dot");
     let currentIndex = 0;
@@ -34,8 +37,11 @@ function getVisibleCount() {
 }
 
 function initRecommendedProducts() {
+    const chevronNext = document.querySelector(".chevron-next");
+    if (!chevronNext) return; // Seite hat Keine Produktempfehlung, nichts zu tun.
+
     const recProducts = document.querySelectorAll(".rec-product");
-    const visibleCount = getVisibleCount();
+    let visibleCount = getVisibleCount();
     let currentIndex = 0;
 
     function showProduct(index) {
@@ -62,4 +68,38 @@ function initRecommendedProducts() {
 initBurger();
 initCarousel();
 initRecommendedProducts();
+
+/*Objektive*/
+function initPriceFilter(sortValue) {
+    const priceElements = document.querySelectorAll(".obj-content .product .price-box .price");
+    if (priceElements.length === 0) return; //Seite hat keine Preisliste, nichts zu tun.
+
+    // Preis und dazugeöhrige Kartenelement zusammen behalten
+    const products = Array.from(priceElements).map(el => ({
+        element: el.closest(".product"),
+        price: parseFloat(el.textContent.replace("€", "").replace(",", ".").trim())
+    }));
+
+    if (sortValue === "price-asc") {
+        products.sort((a, b) => a.price - b.price);
+    } else if (sortValue === "price-desc") {
+        products.sort((a, b) => b.price - a.price);
+    } else {
+        return;
+    }
+
+    // Karten anhand ihrer sortierten Position visuell umordnen
+    products.forEach((product, index) => {
+        product.element.style.order = index;
+    });
+}
+
+function sortPrice() {
+    const selectElement = document.getElementById("sort-filter");
+    selectElement.addEventListener("change", (e) => {
+        initPriceFilter(e.target.value);
+    })
+}
+
+sortPrice();
 

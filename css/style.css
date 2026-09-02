@@ -536,23 +536,24 @@ header .btn-search i,
 
 }
 /** End Unsere Produktempfehlung section **/
+/* End Main */
 /** Start Social-Media & Newsletter **/
-.main-content .social-and-newsletter .container {
+.social-and-newsletter .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 100px;
     margin-bottom: 20px;
 }
-.main-content .social-and-newsletter{
+.social-and-newsletter{
     padding: 15px;
 }
-.main-content .social-and-newsletter .social-content {
+.social-and-newsletter .social-content {
     width: calc(100% / 2);
     height: 100%;
 }
-.main-content .social-and-newsletter .social-content p,
-.main-content .social-and-newsletter .newsletter-content p {
+.social-and-newsletter .social-content p,
+.social-and-newsletter .newsletter-content p {
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -624,14 +625,13 @@ header .btn-search i,
     text-decoration: underline;
 }
 @media (max-width: 768px) {
-    .main-content .social-and-newsletter .container {
+    .social-and-newsletter .container {
         flex-wrap: wrap;
         gap: 50px;
     }
     
 }
 /** End Social-Media & Newsletter **/
-/* End Main */
 /* Start Footer */
 .footer-content {
     padding: 10px;
@@ -683,3 +683,91 @@ header .btn-search i,
     object-fit: contain;
 }
 /* End Footer */
+/*********************************/
+/*********************************/
+
+/* Start Objektive Side url(../objektive.html)*/
+.obj-content .container {
+    background-color: var(--white);
+}
+.obj-content .section-title {
+    text-align: left;
+    margin: 0;
+}
+.obj-content .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap:5px;
+    text-align: center;
+    padding: 10px;
+}
+.obj-content .product {
+    width: 100%;
+    height: 370px;
+    background-color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: var(--transition) ease;
+}
+.obj-content .product a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.obj-content .product img {
+    height: 215px;
+    width: 215px;    
+    padding: 15px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+.obj-content .product h3 {
+    font-size: var(--fs-label);
+}
+.obj-content .product:hover,
+.obj-content .product:focus {
+    box-shadow: 0px 0px 8px var(--shadow-color);
+}
+.obj-content .product .price-box {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.obj-content .product .price-box .price {
+    font-size: var(--fs-title);
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 35%;
+}
+.obj-content .product .price-box .span-text {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 30%;
+    font-size: calc(var(--fs-label) - 2px);
+}
+.obj-content .select-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    padding: 10px;
+}
+.obj-content .select-container select {
+    width: 200px;
+    height: 40px;
+    padding: 6px;
+    border: 1px solid var(--body-85);
+    border-radius: 5px;
+}
+/* End Objektive Side */

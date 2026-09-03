@@ -96,6 +96,7 @@ function initPriceFilter(sortValue) {
 
 function sortPrice() {
     const selectElement = document.getElementById("sort-filter");
+    if (!selectElement) return; // Seite hat keinen Sortier-Filter, nichts zu tun.
     selectElement.addEventListener("change", (e) => {
         initPriceFilter(e.target.value);
     })
@@ -103,3 +104,23 @@ function sortPrice() {
 
 sortPrice();
 
+/* Start Product Side */
+function initProductGallery() {
+    const productImages = document.querySelector(".product-images");
+    if (!productImages) return; // Seite hat keine Produktgalerie, nichts zu tun.
+
+    const activeImg = document.querySelector(".active-img");
+
+    productImages.addEventListener("click", (e) => {
+        e.preventDefault();
+        const link = e.target.closest("a");
+        if (!link) return;
+
+        productImages.querySelector("a.active")?.classList.remove("active");
+        link.classList.add("active");
+        activeImg.src = link.querySelector("img").src;
+    });
+}
+
+initProductGallery();
+/* End Product Side */

@@ -25,9 +25,15 @@
                     <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <div class="header-icons">
-                    <a href="#location" class="location"><i class="fa-solid fa-location-dot"></i><span>Filialen</span></a>
-                    <a href="#cart" class="cart"><i class="fa-solid fa-cart-shopping"></i><span>Warenkorp</span></a>
-                    <a href="#user" class="user"><i class="fa-solid fa-user"></i><span>Anmelden</span></a> 
+                    <a href="#location" class="location"><i class="fa-solid fa-location-dot"></i><span class="icon-label">Filialen</span></a>
+                    <a href="shopping-cart.html" class="cart">
+                        <span class="cart-icon-wrap">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="cart-badge">0</span>
+                        </span>
+                        <span class="icon-label">Warenkorp</span>
+                    </a>
+                    <a href="#user" class="user"><i class="fa-solid fa-user"></i><span class="icon-label">Anmelden</span></a> 
                     <button class="bars "><i class="fa-solid fa-bars"></i></button> 
                 </div>
             </div>
@@ -66,7 +72,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#Objektive">Objektive</a></li>
+                    <li><a href="objektive.html">Objektive</a></li>
                     <li><a href="#Fototaschen">Fototaschen</a></li>
                     <li><a href="#Speicher">Speicher</a></li>
                     <li><a href="#Ferngläser">Ferngläser</a></li>
@@ -475,7 +481,8 @@
         </div>
     </footer>
     <!--End Footer-->
-
+    <script src="js/product-detail.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

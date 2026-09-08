@@ -46,8 +46,12 @@ function selectProduct() {
 }
 selectProduct();
 
-/* Warenkorp */
-
-// document.querySelector(".add-to-cart").addEventListener("click", () => {
-
-// })
+/* Add To Cart Event
+    Id und Menge des Artikels and addToCart() übergeben
+    um spaäter im Localstorage zu speichern.
+*/
+document.querySelector(".add-to-cart").addEventListener("click", () => {
+    const qty = parseInt(document.querySelector("#product-qty").value);
+    addToCart(currentProduct.id, qty);
+    updateCartBadge();
+})

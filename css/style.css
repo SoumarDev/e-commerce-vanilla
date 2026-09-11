@@ -241,6 +241,7 @@ header .btn-search i,
 /*Start Navbar*/
 .links {
     display: none;
+    position: relative;
     background-color: var(--white);
     padding-top: 10px;
 }
@@ -353,6 +354,14 @@ header .btn-search i,
     }
     .sub-links ul li:last-child {
         margin-bottom: 0px;
+    }
+    .links ul li:not(.outdoor-hobby):not(.dealzone) {
+        position: static;
+    }
+    .links ul .outdoor-hobby .sub-links,
+    .links ul .dealzone .sub-links {
+        left: auto;
+        right: 0;
     }
 }
 @media (min-width: 1200px) {

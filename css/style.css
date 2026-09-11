@@ -1237,3 +1237,70 @@ header .btn-search i,
     }
 }
 /* End Cart */
+/*Start Login*/
+.login-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 5px;
+}
+.login-content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    padding: 15px;
+}
+.login-content > a {
+    display: inline-block;
+    margin-top: 15px;
+}
+.login-content form label,
+.login-content form a {
+    text-align: left;
+}
+.login-content form input ,
+.login-content form .submit-btn {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.login-content form input {
+    outline: none;
+    border: 1px solid var(--body-85);
+    font-size: var(--fs-label);
+    font-family: inherit; 
+    transition: var(--transition) ease;
+}
+.login-content form input:focus {
+    border-color: var(--body-40) ;
+}
+.login-content .submit-btn {
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color var(--transition) ease;
+}
+.login-content .submit-btn:hover,
+.login-content .submit-btn:focus {
+    background-color: var(--primary-50);
+}
+.login-content a {
+    text-decoration: underline;
+    color: var(--primary);
+    transition: color var(--transition) ease;
+}
+.login-content a:hover,
+.login-content a:focus {
+    color: var(--primary-50);
+}
+
+
+/*End Login*/

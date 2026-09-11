@@ -71,12 +71,12 @@ initRecommendedProducts();
 
 /*Objektive*/
 function initPriceFilter(sortValue) {
-    const priceElements = document.querySelectorAll(".obj-content .product .price-box .price");
+    const priceElements = document.querySelectorAll(".product-card .price-box .price");
     if (priceElements.length === 0) return; //Seite hat keine Preisliste, nichts zu tun.
 
     // Preis und dazugeöhrige Kartenelement zusammen behalten
     const products = Array.from(priceElements).map(el => ({
-        element: el.closest(".product"),
+        element: el.closest(".product-card"),
         price: parseFloat(el.textContent.replace("€", "").replace(",", ".").trim())
     }));
 

@@ -327,8 +327,8 @@ header .btn-search i,
     text-decoration: underline;                                                 
     color: var(--body-10);
 }
-.links ul .kameras:hover .sub-links,
-.links ul .kameras:focus-within .sub-links{
+.links ul li:hover .sub-links,
+.links ul li:focus-within .sub-links{
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

@@ -3402,7 +3402,7 @@ const products = [
 ]
 
 function getDiscountedPrice(product) {
-    const priceBeforeDiscount = parseFloat(product.price.replace(",", ".").replace("€", "").trim());
+    const priceBeforeDiscount = parseFloat(product.price.replace("€", "").trim().replace(/\./g, "").replace(",", "."));
     const discountAmount = priceBeforeDiscount * 0.1;
     const priceAfterDiscount = priceBeforeDiscount - discountAmount;
 

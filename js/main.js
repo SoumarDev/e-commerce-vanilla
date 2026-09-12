@@ -77,7 +77,7 @@ function initPriceFilter(sortValue) {
     // Preis und dazugeöhrige Kartenelement zusammen behalten
     const products = Array.from(priceElements).map(el => ({
         element: el.closest(".product-card"),
-        price: parseFloat(el.textContent.replace("€", "").replace(",", ".").trim())
+        price: parseFloat(el.textContent.replace("€", "").trim().replace(/\./g, "").replace(",", "."))
     }));
 
     if (sortValue === "price-asc") {
